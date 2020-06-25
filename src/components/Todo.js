@@ -7,7 +7,7 @@ export default function Todo({ todo, toggleTodo }) {
 
   return (
     <li>
-      <label>
+      <label className="cursor-pointer">
         <input type="checkbox" className="leading-tight" checked={todo.complete} onChange={handleTodoClick} />
         <span className="ml-2 text-lg">{ todo.name }</span>
       </label>
