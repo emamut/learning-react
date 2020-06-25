@@ -10,7 +10,8 @@ function App() {
 
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if(storedTodos)  setTodos(storedTodos)
+    if(storedTodos)
+      setTodos(storedTodos)
   }, [])
 
   useEffect(() => {
@@ -44,13 +45,24 @@ function App() {
   }
 
   return (
-    <>
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <input type="text" ref={todoNameRef} />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodos}>Clear Completed</button>
-      <div>{todos.filter(todo => !todo.complete).length} left to do</div>
-    </>
+    <div className="container mx-auto">
+      <div className="flex mt-4">
+        <div className="w-1/3">
+          <TodoList todos={todos} toggleTodo={toggleTodo} />
+        </div>
+      </div>
+      <div className="flex mt-4">
+        <div className="w-1/3">
+          <input className="appearance-none border-2 border-gray-500 rounded w-full" placeholder="Type TODO" type="text" ref={todoNameRef} />
+
+          <button className="bg-blue-500 hover:bg-blue-700 text-white rounded py-2 px-4 mt-3 " onClick={handleAddTodo}>Add TODO</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white rounded py-2 px-4 mt-3  ml-3" onClick={handleClearTodos}>Clear Completed</button>
+          <div className="mt-3 text-lg">
+            <span className="bg-yellow-500 px-3 rounded-full">{todos.filter(todo => !todo.complete).length}</span> left to do
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

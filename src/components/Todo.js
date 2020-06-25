@@ -6,11 +6,11 @@ export default function Todo({ todo, toggleTodo }) {
   }
 
   return (
-    <div>
+    <li>
       <label>
-        <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
-        { todo.name }
+        <input type="checkbox" className="leading-tight" checked={todo.complete} onChange={handleTodoClick} />
+        <span className="ml-2 text-lg">{ todo.name }</span>
       </label>
-    </div>
+    </li>
   )
 }
