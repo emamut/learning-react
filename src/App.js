@@ -47,11 +47,6 @@ function App() {
   return (
     <div className="container mx-auto">
       <div className="flex mt-4">
-        <div className="w-1/3">
-          <TodoList todos={todos} toggleTodo={toggleTodo} />
-        </div>
-      </div>
-      <div className="flex mt-4">
         <div className="w-full md:w-1/3">
           <input className="appearance-none border-2 border-gray-500 rounded w-full" placeholder="Type TODO" type="text" ref={todoNameRef} />
 
@@ -60,6 +55,11 @@ function App() {
           <div className="mt-3 text-lg">
             <span className="bg-yellow-500 px-3 rounded-full">{todos.filter(todo => !todo.complete).length}</span> left to do
           </div>
+        </div>
+      </div>
+      <div className="flex mt-4">
+        <div className="w-1/3">
+          <TodoList todos={todos} toggleTodo={toggleTodo} />
         </div>
       </div>
     </div>
