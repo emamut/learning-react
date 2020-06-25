@@ -52,7 +52,7 @@ function App() {
         </div>
       </div>
       <div className="flex mt-4">
-        <div className="w-1/3">
+        <div className="w-full md:w-1/3">
           <input className="appearance-none border-2 border-gray-500 rounded w-full" placeholder="Type TODO" type="text" ref={todoNameRef} />
 
           <button className="bg-blue-500 hover:bg-blue-700 text-white rounded py-2 px-4 mt-3 " onClick={handleAddTodo}>Add TODO</button>
